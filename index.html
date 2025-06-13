@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings Service Center | Panoor, Kannur</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+      color: #f2f2f2;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    header, nav, section, footer {
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #1c1c1c;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    nav a {
+      color: #00ffd9;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+      background-size: cover;
+      padding: 100px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+    .hero img { width: 100px; margin-bottom: 20px; animation: fadeIn 2s ease-in; }
+    .hero h1 { font-size: 36px; margin: 10px 0; text-shadow: 1px 1px 6px rgba(0,0,0,0.6); animation: fadeInDown 1s ease-out; }
+    .hero p { font-size: 18px; margin-bottom: 30px; text-shadow: 1px 1px 6px rgba(0,0,0,0.5); animation: fadeInUp 1.2s ease-out; }
+    .cta a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background-color: #00ffd9;
+      color: #000;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .cta a:hover {
+      background-color: #00c8b3;
+      transform: scale(1.05);
+    }
+    .cta a.whatsapp {
+      background-color: #25D366;
+      color: white;
+    }
+    .cta a.whatsapp:hover {
+      background-color: #1ebe5d;
+    }
+    .service-item, .accessory-item {
+      font-size: 18px;
+      padding: 30px;
+      border-radius: 12px;
+      background: #1f2e3a;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-item:hover, .accessory-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 20px;
+      font-size: 14px;
+    }
+    #toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00ffd9;
+      color: #000;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 28px; }
+      .hero p { font-size: 16px; }
+      nav { flex-direction: column; align-items: center; }
+      .service-item, .accessory-item { font-size: 16px; padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Settings Service Center</h1>
+    <p>Mobile, Laptop & Desktop Chip-Level Services | Panoor, Kannur</p>
+  </header>
+  <nav style="background: #1c1c1c; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; padding: 10px 20px; gap: 20px;">
+  <a href="#used-products" style="color: #ffffff; font-weight: bold; text-decoration: none;">📱 Used Products</a>
+  <a href="#services" style="color: #ffffff; font-weight: bold; text-decoration: none;">🛠️ Services</a>
+  <a href="#accessories" style="color: #ffffff; font-weight: bold; text-decoration: none;">🔌 Accessories</a>
+  <a href="#booking" style="color: #ffffff; font-weight: bold; text-decoration: none;">📋 Booking</a>
+  <a href="#dealer" style="color: #ffffff; font-weight: bold; text-decoration: none;">🧾 Dealer</a>
+  <a href="#contact" style="color: #ffffff; font-weight: bold; text-decoration: none;">📞 Contact</a>
+  <input type="text" placeholder="Search..." style="padding: 8px 14px; border-radius: 20px; border: none; font-size: 14px;" />
+</nav>
+  <section class="hero" id="home">
+    <img src="logo.png" alt="Logo" />
+    <h1>Professional Mobile & Laptop Service</h1>
+    <p>Quality chip-level repair with warranty</p>
+    <div class="cta">
+      <a href="tel:+919633685847">Call Now</a>
+      <a href="https://wa.me/919633685847" class="whatsapp">WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="services" id="services" style="background: linear-gradient(to bottom, #1b2735, #1b2e3f); padding: 80px 20px 60px;">
+    <h2>Our Services</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:1000px;margin:30px auto;">
+      <div class="service-item">Mobile Chip-Level Service</div>
+      <div class="service-item">Laptop Repair & Spare Parts</div>
+      <div class="service-item">Desktop Hardware & Software Support</div>
+      <div class="service-item">Motherboard Repair & Flashing</div>
+      <div class="service-item">iPhone & Android Servicing</div>
+      <div class="service-item">Data Recovery & Backup</div>
+    </div>
+  </section>
+
+  <section class="accessories" id="accessories" style="background: linear-gradient(to bottom, #1b2e3f, #1b2735); padding: 60px 20px 80px;">
+  <h2>Accessories</h2>
+  <div style="margin: 30px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: 30px auto;">
+    <a href="/products/mobile" class="cta" style="background: linear-gradient(135deg, #3a3a3a, #1f1f1f); color: #fff; padding: 14px 36px; font-size: 18px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 6px 18px rgba(0,0,0,0.5); transition: all 0.4s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"><img src="https://cdn-icons-png.flaticon.com/512/891/891419.png" alt="Mobile Icon" style="width: 20px; vertical-align: middle; margin-right: 8px;">Mobile</a>
+    <a href="/products/laptop-desktop" class="cta" style="background: linear-gradient(135deg, #3a3a3a, #1f1f1f); color: #fff; padding: 14px 36px; font-size: 18px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 6px 18px rgba(0,0,0,0.5); transition: all 0.4s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"><img src="https://cdn-icons-png.flaticon.com/512/761/761762.png" alt="Laptop Icon" style="width: 20px; vertical-align: middle; margin-right: 8px;">Laptop and Desktop</a>
+    <a href="/products/gadgets" class="cta" style="background: linear-gradient(135deg, #3a3a3a, #1f1f1f); color: #fff; padding: 14px 36px; font-size: 18px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 6px 18px rgba(0,0,0,0.5); transition: all 0.4s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"><img src="https://cdn-icons-png.flaticon.com/512/1042/1042332.png" alt="Gadget Icon" style="width: 20px; vertical-align: middle; margin-right: 8px;">Gadgets</a>
+    <a href="/products/premium" class="cta" style="background: linear-gradient(135deg, #3a3a3a, #1f1f1f); color: #fff; padding: 14px 36px; font-size: 18px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 6px 18px rgba(0,0,0,0.5); transition: all 0.4s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Premium Icon" style="width: 20px; vertical-align: middle; margin-right: 8px;">Premium Products</a>
+  </div>
+  <p style="margin-top: 20px; color: #aaa; font-size: 14px;">Click a category to view products. Admin can add new products via the backend panel.</p>
+</section>
+
+  <section class="used-products" id="used-products" style="background: linear-gradient(to bottom, #1b2735, #1b2e3f); padding: 60px 20px 80px; text-align: center;">
+  <h2 style="font-size: 28px; color: #00ffd9; margin-bottom: 30px;">Used Products</h2>
+  <p style="color: #ccc; font-size: 16px; max-width: 800px; margin: auto;">Browse our certified and tested used mobile phones, laptops, desktops, and accessories. Click a tab below to explore products. Admins can manage products through the backend panel.</p>
+  <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+    <a href="/products/used-mobile" class="cta" style="background: linear-gradient(135deg, #ff7e5f, #feb47b); color: #fff; padding: 20px 50px; font-size: 20px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: all 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">Used Mobile Phones</a>
+    <a href="/products/used-laptop" class="cta" style="background: linear-gradient(135deg, #43cea2, #185a9d); color: #fff; padding: 20px 50px; font-size: 20px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: all 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">Used Laptops</a>
+    <a href="/products/used-desktop" class="cta" style="background: linear-gradient(135deg, #8360c3, #2ebf91); color: #fff; padding: 20px 50px; font-size: 20px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: all 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">Used Desktops</a>
+    <a href="/products/used-accessories" class="cta" style="background: linear-gradient(135deg, #f7971e, #ffd200); color: #fff; padding: 20px 50px; font-size: 20px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: all 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">Used Accessories</a>
+  </div>
+</section>
+
+  <section class="map" id="map" style="background: linear-gradient(to bottom, #1b2735, #222c3a); padding: 60px 20px; text-align: center;">
+  <h2 style="font-size: 28px; color: #00ffd9; margin-bottom: 30px;">Find Us</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.031663446002!2d75.5791339!3d11.7568621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba4299ae0b1704d%3A0x5f623951f115a15!2sSettings%20Service%20Center%20Panoor%2C%20Kerala%20670692!5e0!3m2!1sen!2sin!4v1717769273624!5m2!1sen!2sin" width="100%" height="300" style="border:0; border-radius:12px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <p style="color:#aaa; margin-top: 15px; font-size: 14px;">Located in Panoor, Kannur – easily reachable via NH road.</p>
+</section>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings Service Center | Panoor, Kannur</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+      color: #f2f2f2;
+      scroll-behavior: smooth;
+    }
+    header, nav, section, footer {
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #1c1c1c;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    nav a {
+      color: #00ffd9;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: bold;
+      text-align: left;
+    }
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 15px;
+    }
+    form button {
+      padding: 12px 10px;
+      border: none;
+      background: #00ffd9;
+      color: #000;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: 14px;
+    }
+    form button:hover {
+      background-color: #00c8b3;
+    }
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00ffd9;
+      color: #000;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <section id="booking" style="background: #1e2835; padding: 60px 20px;">
+    <h2 style="font-size: 28px; color: #00ffd9; margin-bottom: 30px;">Book a Service</h2>
+    <form id="bookingForm" style="max-width: 600px; margin: auto; animation: fadeIn 1s ease-in-out;">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="name" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" />
+
+      <label for="device">Device Model</label>
+      <input type="text" id="device" name="device" />
+
+      <label for="issue">Issue Description</label>
+      <textarea id="issue" name="issue" rows="4"></textarea>
+
+      <button type="submit">Submit Booking</button>
+    </form>
+  </section>
+
+  <section id="dealer" style="background: #1a2230; padding: 60px 20px;">
+    <h2 style="font-size: 28px; color: #00ffd9; margin-bottom: 30px;">Dealer Registration</h2>
+    <form id="dealerForm" style="max-width: 600px; margin: auto; animation: fadeIn 1s ease-in-out;" enctype="multipart/form-data">
+      <label for="dealerName">Full Name</label>
+      <input type="text" id="dealerName" name="name" required />
+
+      <label for="dealerPhone">Phone Number</label>
+      <input type="tel" id="dealerPhone" name="phone" required pattern="[0-9]{10}" />
+
+      <label for="dealerEmail">Email Address</label>
+      <input type="email" id="dealerEmail" name="email" required />
+
+      <label for="shop">Shop Name</label>
+      <input type="text" id="shop" name="shop" required />
+
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="file">Upload ID Proof</label>
+      <input type="file" id="file" name="file" accept=".jpg,.jpeg,.png,.pdf" required />
+
+      <button type="submit">Register</button>
+    </form>
+  </section>
+
+  <div id="toast" class="toast"></div>
+
+  <script>
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.style.display = 'block';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 3000);
+    }
+
+    document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        name: form.name.value.trim(),
+        phone: form.phone.value.trim(),
+        device: form.device.value.trim(),
+        issue: form.issue.value.trim()
+      };
+      try {
+        const res = await fetch('http://localhost:3000/api/booking', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        showToast(result.message || 'Booking submitted successfully');
+        form.reset();
+      } catch (err) {
+        showToast('Something went wrong. Please try again.');
+      }
+    });
+
+    document.getElementById('dealerForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData();
+      formData.append('name', form.name.value.trim());
+      formData.append('phone', form.phone.value.trim());
+      formData.append('email', form.email.value.trim());
+      formData.append('shop', form.shop.value.trim());
+      formData.append('address', form.address.value.trim());
+      formData.append('file', form.file.files[0]);
+      try {
+        const res = await fetch('http://localhost:3000/api/dealer', {
+          method: 'POST',
+          body: formData
+        });
+        const result = await res.json();
+        showToast(result.message || 'Dealer registered successfully');
+        form.reset();
+      } catch (err) {
+        showToast('File upload failed. Please try again.');
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+  <section class="contact" id="contact" style="background: linear-gradient(to bottom, #1a2230, #181e2a); padding: 60px 20px; text-align: center;">
+  <h2 style="font-size: 28px; color: #00ffd9; margin-bottom: 20px;">Contact Us</h2>
+  <p>Phone: <a href="tel:+919633685847" style="color: #00ffd9; text-decoration: none;">(+91) 9633 685 847</a></p>
+  <p>Email: <a href="mailto:thecompletesettings@gmail.com" style="color: #00ffd9; text-decoration: none;">thecompletesettings@gmail.com</a></p>
+  <div style="margin-top: 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+    <a href="https://wa.me/919633685847" class="cta" style="background: #25D366; color: #fff; border-radius: 30px; padding: 10px 20px; text-decoration: none;">WhatsApp</a>
+    <a href="https://facebook.com" class="cta" style="background: #3b5998; color: #fff; border-radius: 30px; padding: 10px 20px; text-decoration: none;">Facebook</a>
+    <a href="https://instagram.com" class="cta" style="background: #e1306c; color: #fff; border-radius: 30px; padding: 10px 20px; text-decoration: none;">Instagram</a>
+    <a href="https://t.me/yourtelegram" class="cta" style="background: #0088cc; color: #fff; border-radius: 30px; padding: 10px 20px; text-decoration: none;">Telegram</a>
+    <a href="https://x.com/yourxhandle" class="cta" style="background: #000; color: #fff; border-radius: 30px; padding: 10px 20px; text-decoration: none;">X</a>
+  </div>
+</section>
+
+  <div id="toast"></div>
+
+  <script>
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.innerText = message;
+      toast.style.display = 'block';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 3000);
+    }
+
+    document.getElementById('bookingForm')?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        name: form[0].value,
+        phone: form[1].value,
+        device: form[2].value,
+        issue: form[3].value
+      };
+      const res = await fetch('http://localhost:3000/api/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await res.json();
+      showToast(result.message);
+      form.reset();
+    });
+
+    document.getElementById('dealerForm')?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        name: form[0].value,
+        phone: form[1].value,
+        email: form[2].value,
+        shop: form[3].value,
+        address: form[4].value
+      };
+      const res = await fetch('http://localhost:3000/api/dealer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await res.json();
+      showToast(result.message);
+      form.reset();
+    });
+  </script>
+
