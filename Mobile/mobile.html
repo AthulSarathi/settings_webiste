@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobile Accessories Categories</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: #0f2027;
+      color: #ffffff;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 300px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    .card .overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      color: #fff;
+      z-index: 2;
+    }
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    .card p {
+      font-size: 16px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mobile Accessories Categories</h1>
+
+  <div class="grid">
+  <!-- First set of cards -->
+  <div class="card" onclick="location.href='protective-gear.html'">
+    <img src="Protective Gear.png" alt="Protective Gear">
+    <div class="overlay">
+      <h3>Protective Gear</h3>
+      <p>Cases, Screen Guards, Camera Lens Protectors</p>
+    </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Second set of cards -->
+  <div class="card" onclick="location.href='Charging & Power.html'">
+    <img src="Charging and Power.png" alt="Charging and Power">
+    <div class="overlay">
+      <h3>Charging and Power</h3>
+      <p>Wall Charger, Fast Charger, Wireless Charger, PowerBanks, Charging Cables (Type-C, Micro,Lightnig)</p>
+    </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Therd set of cards -->
+  <div class="card" onclick="location.href='Audio_Accessories.html'">
+    <img src="Audio_Accessories.PNG" alt="Audio Accessories">
+    <div class="overlay">
+      <h3>Audio Accessoreis</h3>
+      <p>Wired Earphones, Wireless Earbuds(TWS), Bluetooth Headphones, Neckbands, portable Bluetooth Speakers, Audio Spliters, C to Aux Cable</p>
+    </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Forth set of cards -->
+  <div class="card" onclick="location.href='Mounts & Holders.html'">
+    <img src="Mounts and Holders.PNG" alt="Mounts and Holders">
+    <div class="overlay">
+      <h3>Mounts and Holders</h3>
+      <p>Car Mounts Magnetic, Bike Mounts, Tripods and Stands, Ring Holders and POP Sockets</p>
+    </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Fifth set of cards -->
+  <div class="card" onclick="location.href='Connectivity & Data.html'">
+    <img src="Connectivity and Data.png" alt="Connectivity and Data">
+    <div class="overlay">
+      <h3>Mounts and Holders</h3>
+      <p>Car Mounts Magnetic, Bike Mounts, Tripods and Stands, Ring Holders and POP Sockets</p>
+    </div>
+  </div>
+</div>

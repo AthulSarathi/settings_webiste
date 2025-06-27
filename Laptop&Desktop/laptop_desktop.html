@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laptop and Desktop Accessories Categories</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: #0f2027;
+      color: #fff;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 300px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    .card .overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      color: #fff;
+      z-index: 2;
+    }
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    .card p {
+      font-size: 16px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Laptop and Desktop Accessories Categories</h1>
+
+  <div class="grid">
+  <!-- First set of cards -->
+  <div class="card" onclick="location.href='Input_Devices.html'">
+    <img src="Input_devices.PNG" alt="Input Devices">
+    <div class="overlay">
+      <h3>Input Devices</h3>
+      <p>Wired Mouse, Wireless Mouse, Gaming Mouse, Keyboard (Wired/Wireless/Mechanical), Touchpads & Trackpads, Presentation Remotes</p>
+    </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Second set of cards -->
+  <div class="card" onclick="location.href='Display & Visual.html'">
+    <img src="Display_Visual.PNG" alt="Display & Visual">
+    <div class="overlay">
+      <h3>Display and Visual</h3>
+      <p>External Monitors, Monitor Stands & Arms, Laptop Stands & Risers, Screen Protectors, Privacy Filters, Webcams (HD, 4K), Laptop Cooling Pads</p>
+    </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Therd set of cards -->
+  <div class="card" onclick="location.href='Audio & Communication.html'">
+    <img src="Audio_Communication.PNG" alt="Audio & Communication">
+    <div class="overlay">
+      <h3>Audio and Communication</h3>
+      <p>Headphones (Wired/Wireless), Earbuds, External Microphones, Speaker Systems, Headsets (With Mic), Conference Speakers</p>
+    </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Forth set of cards -->
+  <div class="card" onclick="location.href='Power & Charging.html'">
+    <img src="Power_Charging.PNG" alt="Power & Charging">
+    <div class="overlay">
+      <h3>Power and Charging</h3>
+      <p>Laptop Chargers / Adapters, USB Hubs, Docking Stations, Power Banks for Laptops, Surge Protectors / UPS</p>
+    </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Fifth set of cards -->
+  <div class="card" onclick="location.href='Connectivity & Expansion.html'">
+    <img src="Connectivity_Expansion.png" alt="Connectivity & Expansion">
+    <div class="overlay">
+      <h3>Connectivity and Expansion</h3>
+      <p>CUSB Hubs, OTG Cables & Converters, LAN Adapters, HDMI/VGA/DisplayPort Adapters, USB-C / Thunderbolt Docks, Bluetooth & Wi-Fi Dongles</p>
+      </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Sixth set of cards -->
+  <div class="card" onclick="location.href='Storage Devices.html'">
+    <img src="Storage_Devices.png" alt="Storage Devices">
+    <div class="overlay">
+      <h3>Storage Devices</h3>
+      <p>External Hard Drives, SSDs (Portable/External), USB Flash Drives, SD Card Readers</p>
+      </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Seventh set of cards -->
+  <div class="card" onclick="location.href='Cleaning & Maintenance.html'">
+    <img src="Cleaning_Maintenance.png" alt="Cleaning & Maintenance">
+    <div class="overlay">
+      <h3>Cleaning and Maintenance</h3>
+      <p>Keyboard Cleaners, Screen Cleaning Kits, Air Blowers, Cable Organizers</p>
+      </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Eighth set of cards -->
+  <div class="card" onclick="location.href='Carrying & Protection.html'">
+    <img src="Carrying_Protection.png" alt="Carrying & Protection">
+    <div class="overlay">
+      <h3>Carrying and Protection</h3>
+      <p>Laptop Bags / Sleeves, Backpacks with Laptop Compartments, Hard Cases, Dust Covers (for Keyboard/Monitor)</p>
+      </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Eighth set of cards -->
+  <div class="card" onclick="location.href='Carrying & Protection.html'">
+    <img src="Carrying_Protection.png" alt="Carrying & Protection">
+    <div class="overlay">
+      <h3>Carrying and Protection</h3>
+      <p>Laptop Bags / Sleeves, Backpacks with Laptop Compartments, Hard Cases, Dust Covers (for Keyboard/Monitor)</p>
+      </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gadgets</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: #0f2027;
+      color: #fff;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 300px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    .card .overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      color: #fff;
+      z-index: 2;
+    }
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    .card p {
+      font-size: 16px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>GADGETS</h1>
+
+  <div class="grid">
+  <!-- First set of cards -->
+  <div class="card" onclick="location.href='Gadgets.html'">
+    <img src="Smartwatches_Fitness Trackers.png" alt="martwatches Fitness Trackers">
+    <div class="overlay">
+      <h3>Smartwatches and Fitness Trackers</h3>
+      <p>Smartwatches, Fitness Trackers</p>
+    </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Second set of cards -->
+  <div class="card" onclick="location.href='Gadgets.html'">
+    <img src="Smart_Home.png" alt="Smart Home">
+    <div class="overlay">
+      <h3>Smart Home</h3>
+      <p>Smart Speakers (e.g., Alexa, Google Nest), Smart Lights & Plugs, Smart Thermostats, Security Cameras & Doorbells, Robot Vacuums, Home Hubs & Sensors</p>
+    </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Therd set of cards -->
+  <div class="card" onclick="location.href='Gadgets.html'">
+    <img src="Gaming.png" alt="Gaming">
+    <div class="overlay">
+      <h3>Gaming</h3>
+      <p>VR Headsets,Game Controllers</p>
+    </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Forth set of cards -->
+  <div class="card" onclick="location.href='Gadgets.html'">
+    <img src="Photography_Video.png" alt="Photography & Video">
+    <div class="overlay">
+      <h3>Photography and Video</h3>
+      <p>Digital Cameras, Action Cameras (e.g., GoPro), Drones, Camera Accessories (tripods, gimbals, lenses), Webcams & Streaming Gear</p>
+    </div>
+  </div>
+</div>
+
+<!-- Add spacing before second grid -->
+<div class="grid" style="margin-top: 60px;">
+  <!-- Fifth set of cards -->
+  <div class="card" onclick="location.href='Gadgets.html'">
+    <img src="Automotive_Gadgets.png" alt="Automotive Gadgets">
+    <div class="overlay">
+      <h3>Automotive Gadgets</h3>
+      <p>Dash Cams, GPS Navigation Systems, Car Phone Mounts, OBD2 Diagnostic Tools, Car Chargers & Bluetooth Adapters</p>
+      </div>
+  </div>
+</div>
+</body>
+</html>
